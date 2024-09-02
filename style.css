@@ -2,10 +2,14 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 700px;
+    height: 700px;
+
 }
 
 #container div {
-    height: 40px;
-    width: 40px;
+    width: calc(700px / 16);
+    height: calc(700px/16);
+    box-sizing: border-box;
     border: 2px solid black;
 }
