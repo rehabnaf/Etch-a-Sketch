@@ -6,13 +6,21 @@ for (let i = 1; i <= 16; ++i) {
         const square = document.createElement("div");
         container.appendChild(square);
     }
+
 }
 let squares = document.querySelectorAll("#container div")
 
+
+let opacity = 0;
 function addHoverEffect() {
     squares.forEach((square) => {
         square.addEventListener("mouseover", () => {
-            square.style.backgroundColor = "yellow";
+            const red = 255 * Math.random();
+            const blue = 255 * Math.random();
+            const green = 255 * Math.random();
+            square.style.backgroundColor = `rgb(${red},${blue},${green})`;
+            square.style.opacity = opacity;
+            opacity = opacity + 0.1;
         });
     })
 }
@@ -42,6 +50,7 @@ function addSquares(numOfSquares) {
             container.appendChild(square);
         }
     }
+    opacity = 0;
     squares = document.querySelectorAll("#container div");
     addHoverEffect();
 }
